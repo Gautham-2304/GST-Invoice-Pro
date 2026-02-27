@@ -1,0 +1,35 @@
+# Node dependencies
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Python environment and caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Application specific
+server/uploads/
+server/exports/
+.env
+
+# Workspace and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
