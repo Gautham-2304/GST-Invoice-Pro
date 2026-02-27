@@ -13,10 +13,8 @@ def safe_float(value):
         return 0.0
 
 def generate_gstr1_csv(data_list: List[InvoiceData], output_path: str):
-    print(f"DEBUG EXPORT: Found {len(data_list)} invoices to export to CSV.")
     rows = []
-    for i, data in enumerate(data_list):
-        print(f"DEBUG EXPORT: Processing row {i+1}: Inv={data.invoice_number}, Total={data.total_amount}")
+    for data in data_list:
         rows.append({
             "Recipient GSTIN": data.gstin,
             "Invoice Number": data.invoice_number,
@@ -32,15 +30,12 @@ def generate_gstr1_csv(data_list: List[InvoiceData], output_path: str):
         })
     
     df = pd.DataFrame(rows)
-    print(f"DEBUG EXPORT: Final DataFrame has {len(df)} rows. Saving to {output_path}")
     df.to_csv(output_path, index=False)
     return output_path
 
 def generate_gstr1_excel(invoices: List[InvoiceData], output_path: str):
-    print(f"DEBUG EXPORT: Found {len(invoices)} invoices to export to EXCEL.")
     data = []
-    for i, inv in enumerate(invoices):
-        print(f"DEBUG EXPORT: Processing row {i+1}: Inv={inv.invoice_number}, Total={inv.total_amount}")
+    for inv in invoices:
         data.append({
             "GSTIN/UIN of Recipient": inv.gstin,
             "Invoice Number": inv.invoice_number,
@@ -58,6 +53,5 @@ def generate_gstr1_excel(invoices: List[InvoiceData], output_path: str):
         })
     
     df = pd.DataFrame(data)
-    print(f"DEBUG EXPORT: Final DataFrame has {len(df)} rows. Saving to {output_path}")
     df.to_excel(output_path, index=False, engine='openpyxl')
     return output_path

@@ -9,7 +9,7 @@ from exporter import generate_gstr1_csv, generate_gstr1_excel
 import uuid
 
 app = FastAPI()
-print("DEBUG: SERVER STARTING - STABILITY FIX V4 ACTIVE")
+app = FastAPI()
 
 # Enable CORS for frontend
 app.add_middleware(
@@ -45,7 +45,6 @@ async def export_data(requestBody: dict):
     invoices = requestBody.get('invoices', [])
     export_format = requestBody.get('format', 'csv')
     
-    print(f"DEBUG EXPORT: Received {len(invoices)} invoices for export preparation")
     
     if not invoices:
         raise HTTPException(status_code=400, detail="No invoice data provided")
@@ -74,7 +73,6 @@ async def export_data(requestBody: dict):
     else:
         generate_gstr1_csv(data_list, export_path)
     
-    print(f"DEBUG EXPORT: File prepared: {filename}")
     return {"status": "success", "file_id": filename}
 
 @app.get("/api/download/{filename}")
