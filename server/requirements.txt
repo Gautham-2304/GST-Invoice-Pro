@@ -1,8 +1,9 @@
+setuptools
 fastapi
 uvicorn
 python-multipart
 google-generativeai
-pandas<2.0.0
+pandas
 openpyxl
 pydantic
 python-dotenv
