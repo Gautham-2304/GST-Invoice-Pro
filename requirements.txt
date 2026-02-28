@@ -1,0 +1,9 @@
+setuptools
+fastapi
+uvicorn
+python-multipart
+google-generativeai
+pandas
+openpyxl
+pydantic
+python-dotenv
