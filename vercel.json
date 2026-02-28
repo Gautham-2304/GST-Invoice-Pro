@@ -1,0 +1,8 @@
+{
+    "rewrites": [
+        {
+            "source": "/api/(.*)",
+            "destination": "https://gst-invoice-pro-qnah.onrender.com/api/$1"
+        }
+    ]
+}

@@ -9,7 +9,6 @@ from exporter import generate_gstr1_csv, generate_gstr1_excel
 import uuid
 
 app = FastAPI()
-app = FastAPI()
 
 # Enable CORS for frontend
 app.add_middleware(
