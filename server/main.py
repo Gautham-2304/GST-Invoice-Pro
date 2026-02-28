@@ -4,8 +4,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from typing import List
 import os
 import shutil
-from processor import extract_invoice_data, InvoiceData
-from exporter import generate_gstr1_csv, generate_gstr1_excel
+from server.processor import extract_invoice_data, InvoiceData
+from server.exporter import generate_gstr1_csv, generate_gstr1_excel
 import uuid
 
 app = FastAPI()

@@ -1,6 +1,6 @@
 import pandas as pd
 from typing import List
-from processor import InvoiceData
+from server.processor import InvoiceData
 
 def safe_float(value):
     if value is None: return 0.0
